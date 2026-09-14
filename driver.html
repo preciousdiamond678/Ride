@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EkpomaRide | Driver</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            Ekpoma<span>Ride</span>
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        HOME
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        ABOUT
+                    </a>
+                </li>
+
+                <li>
+                    <a href="rides.html">
+                        RIDES
+                    </a>
+                </li>
+
+                <li>
+                    <a href="booking.html">
+                        BOOK A RIDE
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        CONTACT
+                    </a>
+                </li>
+
+                <li><a href="driver.html">DRIVER</a></li>
+                <li><a href="history.html">HISTORY</a></li>
+                <li><a href="payment.html">PAYMENT</a></li>
+                <li><a href="admin.html">ADMIN</a></li>
+                <li><a href="feedback.html">FEEDBACK</a></li>
+
+            </ul>
+
+        </nav>
+
+        <a href="booking.html" class="header-button">
+            Book Ride
+        </a>
+
+    </header>
+
+
+    <!-- PAGE HERO -->
+
+    <section class="page-hero">
+
+        <h1>
+            Become an <span>EkpomaRide Driver</span>
+        </h1>
+
+        <p>
+            Drive with us and earn while helping people move.
+        </p>
+
+    </section>
+
+
+    <!-- DRIVER SECTION -->
+
+    <section class="driver-section">
+
+        <div class="driver-container">
+
+
+            <!-- DRIVER INFORMATION -->
+
+            <div class="driver-text">
+
+                <h2>
+                    Drive with <span>EkpomaRide</span>
+                </h2>
+
+                <p>
+                    Join our growing community of drivers.
+                    Choose when you want to drive and help
+                    passengers reach their destinations.
+                </p>
+
+                <div class="driver-benefits">
+
+                    <div>
+                        🚗
+                        <strong>Flexible Driving</strong>
+                    </div>
+
+                    <div>
+                        💰
+                        <strong>Earn More</strong>
+                    </div>
+
+                    <div>
+                        🤝
+                        <strong>Meet Passengers</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DRIVER FORM -->
+
+            <div class="driver-form-box">
+
+                <h2>
+                    Driver Registration
+                </h2>
+
+                <form
+                    onsubmit="driverRegister(event)"
+                >
+
+                    <div class="input-box">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            placeholder="08012345678"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <label>
+                            Vehicle Type
+                        </label>
+
+                        <select required>
+
+                            <option value="">
+                                Select vehicle
+                            </option>
+
+                            <option>
+                                Sedan
+                            </option>
+
+                            <option>
+                                SUV
+                            </option>
+
+                            <option>
+                                Hatchback
+                            </option>
+
+                            <option>
+                                Minivan
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <label>
+                            Vehicle Number
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="ABC-123-XY"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <label>
+                            Driver's License Number
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter license number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="book-button"
+                    >
+                        REGISTER AS DRIVER
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="logo">
+            Ekpoma<span>Ride</span>
+        </div>
+
+        <p>
+            Ride smart . Spend less . Connect comfortably
+        </p>
+
+        <p>
+            © 2026 EkpomaRide. All Rights Reserved.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="rides.html">Rides</a>
+            <a href="booking.html">Book a Ride</a>
+            <a href="contact.html">Contact</a>
+            <a href="driver.html">Driver</a>
+            <a href="history.html">History</a>
+            <a href="payment.html">Payment</a>
+            <a href="admin.html">Admin</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
