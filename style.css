@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+
 
 * {
     margin: 0;
@@ -31,7 +29,7 @@ header {
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     position: sticky;
     top: 0;
@@ -39,56 +37,31 @@ header {
     z-index: 1000;
 }
 
-
-/* LOGO */
-
 .logo {
     font-size: 25px;
     font-weight: bold;
     color: #ffc400;
-        
-    .transition {
-            width: 100px;
-            height: 100px;
-            background-color: #333;
-            /* transition: width 1s; */
-            transition: width 2s, height 2s, background-color 3s, transform 2s;
-        }
-         .transition:hover {
-            width: 500px;
-            background-color: coral;
-            height: 500px;
-            transform: rotate(90deg);
-         }
-         .transit-transform {
-            height: 100px;
-            width: 100px;
-            background: green;
-            padding: 10px;
-            transition: width 2s;
-            margin-top: 10px;
-            transition-timing-function: ease-in-out;
-         }
-         .transit-transform:hover {
-            width: 800px;
-            height: 500px;
-         }
-    
-
 }
-    
 
 .logo span {
     color: white;
 }
 
 
-/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
 
 nav ul {
     display: flex;
+    align-items: center;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -98,6 +71,7 @@ nav a {
     font-size: 14px;
     font-weight: bold;
 
+    transition: 0.3s;
 }
 
 nav a:hover {
@@ -109,7 +83,9 @@ nav a.active {
 }
 
 
-/* HEADER BUTTON */
+/* =========================
+   BOOK RIDE BUTTON
+========================= */
 
 .header-button {
     background: #ffc400;
@@ -128,7 +104,150 @@ nav a.active {
 
 .header-button:hover {
     background: white;
+    color: #111;
 }
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+    font-size: 30px;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+    @media (max-width: 1200px) {
+
+        header {
+            padding: 15px 5%;
+
+            /* Logo LEFT + button RIGHT */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: relative;
+    }
+
+    /* LOGO STAYS LEFT */
+    .logo {
+        font-size: 22px;
+    }
+
+    /* MENU BUTTON GOES RIGHT */
+    .menu-btn {
+        display: block;
+
+        margin-left: auto;
+
+        position: relative;
+        z-index: 1002;
+    }
+
+    /* MOBILE NAVIGATION */
+    nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #111;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 0 5%;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.4s ease;
+    }
+
+    /* WHEN MENU IS CLICKED */
+    nav.show {
+        max-height: 600px;
+
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+
+    nav ul {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 0;
+
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+
+        text-align: center;
+
+        border-bottom: 1px solid #333;
+    }
+
+    nav ul li a {
+        display: block;
+
+        padding: 15px 0;
+
+        width: 100%;
+    }
+
+    .header-button {
+        display: block;
+
+        width: fit-content;
+
+        margin: 20px auto 0;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 14px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .menu-btn {
+        font-size: 27px;
+    }
+}
+
 
 
 /* =========================
@@ -903,7 +1022,7 @@ footer p {
 @media (max-width: 650px) {
 
     header {
-        flex-direction: column;
+        flex-direction: row;
 
         gap: 20px;
     }
@@ -1596,3 +1715,219 @@ td {
     }
 
 }
+
+
+
+
+/* ==========================================================================
+   AUTHENTICATION PAGE STYLES (LOGIN / REGISTER)
+   ========================================================================== */
+
+.auth-section {
+    padding: 60px 5%;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.auth-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1050px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Left side Image Styling */
+.auth-image {
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+}
+
+.auth-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.auth-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    color: #ffffff;
+}
+
+.auth-image-overlay h3 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.auth-image-overlay h3 span {
+    color: #ff6600; /* Matching brand highlight color */
+}
+
+.auth-image-overlay p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Right side Form Styling */
+.auth-form-container {
+    width: 50%;
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Tabs */
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid #eef0f2;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 0;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+    color: #ff6600;
+    border-bottom-color: #ff6600;
+}
+
+/* Forms */
+.auth-form {
+    display: none;
+    flex-direction: column;
+}
+
+.auth-form.active-form {
+    display: flex;
+}
+
+.auth-form h2 {
+    font-size: 1.6rem;
+    color: #222222;
+    margin-bottom: 6px;
+}
+
+.form-subtext {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 22px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #ff6600;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #555555;
+    cursor: pointer;
+}
+
+.forgot-pass {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-pass:hover {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6600;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e05500;
+}
+
+/* Responsive Styles for Mobile & Tablets */
+@media screen and (max-width: 850px) {
+    .auth-wrapper {
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .auth-image {
+        display: none; /* Hide desktop image on mobile */
+    }
+
+    .auth-form-container {
+        width: 100%;
+        padding: 30px 20px;
+    }
+}
+
+

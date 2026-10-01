@@ -7,34 +7,44 @@
 
     <title>EkpomaRide | Home</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styling.css">
 </head>
 
 <body>
 
     <!-- HEADER -->
-    <header>
+<header>
 
-        <div class="logo">
-            Ekpoma<span>Ride</span>
-        </div>
+    <!-- Logo on the LEFT -->
+    <div class="logo">
+         <h3 class="logo-text">EKPOMA<span>RIDE</h3>
+    </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="rides.html">RIDES</a></li>
-                <li><a href="booking.html">BOOK A RIDE</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="driver.html">DRIVER</a></li>
-                <li><a href="history.html">HISTORY</a></li>
-                <li><a href="payment.html">PAYMENT</a></li>
-                
-        <a href="booking.html" class="header-button">
-            Book Ride
+    <!-- Menu button on the RIGHT -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        ☰
+    </button>
+
+    <!-- Navigation -->
+    <nav id="navMenu">
+        <ul>
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="rides.html">RIDES</a></li>
+            <li><a href="booking.html">BOOK-A-RIDE</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="driver.html">DRIVER</a></li>
+            <li><a href="history.html">HISTORY</a></li>
+            <li><a href="payment.html">PAYMENT</a></li>
+        </ul>
+
+        <a href="index.html" class="header-button">
+            Home
         </a>
+    </nav>
 
-    </header>
+</header>
+
 
 
     <!-- HERO -->
@@ -185,6 +195,14 @@
         </div>
 
     </footer>
-
+        <script>
+  const menuBtn = document.querySelector('.menu-btn');
+  const nav = document.querySelector('nav');
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+</script>
 </body>
+<script src="script.js"></script>
 </html>
+ 

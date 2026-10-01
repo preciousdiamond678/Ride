@@ -1,344 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>EkpomaRide | Payment</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
+    <div class="payment-container" style="max-width:500px; margin:40px auto; background:#1a1a1a; padding:25px; border-radius:15px; border:1px solid #333;">
+    <h2 style="color:#ffc400; text-align:center;">Payment</h2>
+    
+    <!-- Payment Tabs -->
+    <div style="display:flex; gap:10px; margin:20px 0;">
+        <button onclick="showPay('card')" id="cardBtn" class="pay-tab active" style="flex:1; padding:12px; background:#ffc400; color:#000; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">💳 Card</button>
+        <button onclick="showPay('transfer')" id="transferBtn" class="pay-tab" style="flex:1; padding:12px; background:#222; color:#fff; border:1px solid #333; border-radius:8px; cursor:pointer;">🏦 Transfer</button>
+        <button onclick="showPay('cash')" id="cashBtn" class="pay-tab" style="flex:1; padding:12px; background:#222; color:#fff; border:1px solid #333; border-radius:8px; cursor:pointer;">💵 Cash</button>
+    </div>
 
-
-    <!-- HEADER -->
-
-    <header>
-
-        <div class="logo">
-            Ekpoma<span>Ride</span>
+    <!-- CARD PAYMENT -->
+    <div id="cardPay" class="pay-method">
+        <input type="text" placeholder="Card Number (0000 0000 0000 0000)" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #333; background:#111; color:#fff;">
+        <div style="display:flex; gap:10px;">
+            <input type="text" placeholder="MM/YY" style="flex:1; padding:12px; border-radius:8px; border:1px solid #333; background:#111; color:#fff;">
+            <input type="text" placeholder="CVV" style="flex:1; padding:12px; border-radius:8px; border:1px solid #333; background:#111; color:#fff;">
         </div>
-
-        <nav>
-
-            <ul>
-
-                <li>
-                    <a href="index.html">
-                        HOME
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about.html">
-                        ABOUT
-                    </a>
-                </li>
-
-                <li>
-                    <a href="rides.html">
-                        RIDES
-                    </a>
-                </li>
-
-                <li>
-                    <a href="booking.html">
-                        BOOK A RIDE
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html">
-                        CONTACT
-                    </a>
-                </li>
-
-                <li><a href="driver.html">DRIVER</a></li>
-                <li><a href="history.html">HISTORY</a></li>
-                <li><a href="payment.html">PAYMENT</a></li>
-                
-               
-            </ul>
-
-        </nav>
-
-        <a href="booking.html" class="header-button">
-            Book Ride
-        </a>
-
-    </header>
-
-
-    <!-- PAGE HERO -->
-
-    <section class="page-hero">
-
-        <h1>
-            Ride <span>Payment</span>
-        </h1>
-
-        <p>
-            Complete your payment securely.
-        </p>
-
-    </section>
-
-
-    <!-- PAYMENT -->
-
-    <section class="payment-section">
-
-        <div class="payment-container">
-
-
-            <!-- PAYMENT SUMMARY -->
-
-            <div class="payment-summary">
-
-                <h2>
-                    Trip Summary
-                </h2>
-
-                <div class="summary-row">
-
-                    <span>
-                        Pick-up
-                    </span>
-
-                    <strong>
-                        Ekpoma
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-row">
-
-                    <span>
-                        Destination
-                    </span>
-
-                    <strong>
-                        Auchi
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-row">
-
-                    <span>
-                        Ride Type
-                    </span>
-
-                    <strong>
-                        Comfort
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-row">
-
-                    <span>
-                        Distance
-                    </span>
-
-                    <strong>
-                        35 km
-                    </strong>
-
-                </div>
-
-
-                <hr>
-
-
-                <div class="total-row">
-
-                    <span>
-                        Total
-                    </span>
-
-                    <strong>
-                        ₦2,500
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <!-- PAYMENT FORM -->
-
-            <div class="payment-form-box">
-
-                <h2>
-                    Payment Method
-                </h2>
-
-
-                <form
-                    onsubmit="makePayment(event)"
-                >
-
-
-                    <div class="payment-options">
-
-                        <label class="payment-option">
-
-                            <input
-                                type="radio"
-                                name="payment"
-                                checked
-                            >
-
-                            <span>
-                                💳 Card
-                            </span>
-
-                        </label>
-
-
-                        <label class="payment-option">
-
-                            <input
-                                type="radio"
-                                name="payment"
-                            >
-
-                            <span>
-                                📱 Transfer
-                            </span>
-
-                        </label>
-
-
-                        <label class="payment-option">
-
-                            <input
-                                type="radio"
-                                name="payment"
-                            >
-
-                            <span>
-                                💵 Cash
-                            </span>
-
-                        </label>
-
-                    </div>
-
-
-                    <div class="input-box">
-
-                        <label>
-                            Card Holder Name
-                        </label>
-
-                        <input
-                            type="text"
-                            placeholder="Name on card"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="input-box">
-
-                        <label>
-                            Card Number
-                        </label>
-
-                        <input
-                            type="text"
-                            placeholder="1234 5678 9012 3456"
-                            maxlength="19"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="payment-small-inputs">
-
-                        <div class="input-box">
-
-                            <label>
-                                Expiry Date
-                            </label>
-
-                            <input
-                                type="text"
-                                placeholder="MM/YY"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="input-box">
-
-                            <label>
-                                CVV
-                            </label>
-
-                            <input
-                                type="password"
-                                placeholder="123"
-                                maxlength="3"
-                                required
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="book-button"
-                    >
-                        PAY ₦2,500
-                    </button>
-
-                </form>
-
-            </div>
-
+        <input type="text" placeholder="Card Holder Name" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #333; background:#111; color:#fff;">
+        <button onclick="payNow('Card')" style="width:100%; padding:14px; background:#ffc400; border:none; border-radius:8px; font-weight:bold; margin-top:10px; cursor:pointer;">Pay Now</button>
+    </div>
+
+    <!-- TRANSFER PAYMENT -->
+    <div id="transferPay" class="pay-method" style="display:none;">
+        <div style="background:#111; padding:15px; border-radius:10px; border:1px dashed #ffc400; text-align:center;">
+            <p style="color:#aaa; font-size:14px;">Transfer to:</p>
+            <h3 style="color:#fff; margin:5px 0;">EkpomaRide Ltd</h3>
+            <h2 style="color:#ffc400; letter-spacing:1px;">0123456789</h2>
+            <p style="color:#fff;">Moniepoint MFB</p>
+            <p style="color:#aaa; font-size:12px; margin-top:10px;">Amount: <span style="color:#fff; font-weight:bold;">₦2,500</span></p>
         </div>
+        <input type="text" placeholder="Enter Sender's Name" style="width:100%; padding:12px; margin:12px 0; border-radius:8px; border:1px solid #333; background:#111; color:#fff;">
+        <button onclick="uploadProof()" style="width:100%; padding:12px; background:#222; border:1px solid #333; border-radius:8px; color:#fff; cursor:pointer;">Upload Transfer Receipt</button>
+        <button onclick="payNow('Transfer')" style="width:100%; padding:14px; background:#ffc400; border:none; border-radius:8px; font-weight:bold; margin-top:10px; cursor:pointer;">I Have Transferred</button>
+    </div>
 
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="logo">
-            Ekpoma<span>Ride</span>
+    <!-- CASH PAYMENT -->
+    <div id="cashPay" class="pay-method" style="display:none;">
+        <div style="background:#111; padding:20px; border-radius:10px; text-align:center;">
+            <div style="font-size:40px;">💵</div>
+            <h3 style="color:#fff; margin-top:10px;">Pay with Cash</h3>
+            <p style="color:#aaa; font-size:14px; margin-top:8px;">You will pay the driver directly when your ride arrives. Please have exact amount ready.</p>
+            <p style="color:#ffc400; margin-top:12px; font-weight:bold; font-size:18px;">Amount to Pay: ₦2,500</p>
         </div>
+        <button onclick="payNow('Cash')" style="width:100%; padding:14px; background:#ffc400; border:none; border-radius:8px; font-weight:bold; margin-top:15px; cursor:pointer;">Confirm Cash Payment</button>
+    </div>
+</div>
 
-        <p>
-            Ride smart . Spend less . Connect comfortably
-        </p>
+<script>
+function showPay(method) {
+    document.getElementById('cardPay').style.display = 'none';
+    document.getElementById('transferPay').style.display = 'none';
+    document.getElementById('cashPay').style.display = 'none';
+    
+    document.getElementById('cardBtn').style.background = '#222';
+    document.getElementById('cardBtn').style.color = '#fff';
+    document.getElementById('transferBtn').style.background = '#222';
+    document.getElementById('transferBtn').style.color = '#fff';
+    document.getElementById('cashBtn').style.background = '#222';
+    document.getElementById('cashBtn').style.color = '#fff';
 
-        <p>
-            © 2026 EkpomaRide. All Rights Reserved.
-        </p>
+    if (method === 'card') {
+        document.getElementById('cardPay').style.display = 'block';
+        document.getElementById('cardBtn').style.background = '#ffc400';
+        document.getElementById('cardBtn').style.color = '#000';
+    } else if (method === 'transfer') {
+        document.getElementById('transferPay').style.display = 'block';
+        document.getElementById('transferBtn').style.background = '#ffc400';
+        document.getElementById('transferBtn').style.color = '#000';
+    } else {
+        document.getElementById('cashPay').style.display = 'block';
+        document.getElementById('cashBtn').style.background = '#ffc400';
+        document.getElementById('cashBtn').style.color = '#000';
+    }
+}
 
-    </footer>
+function payNow(type) {
+    alert(type + ' Payment Successful! Your driver is on the way.');
+    window.location.href = 'history.html';
+}
 
-
-    <script src="script.js"></script>
-
+function uploadProof() {
+    alert('Receipt upload - you can connect to Cloudinary or just accept image for now');
+}
+</script>
 </body>
-
 </html>

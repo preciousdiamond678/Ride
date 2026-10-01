@@ -10,7 +10,7 @@
 
     <title>EkpomaRide | Ride History</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styling.css">
 
 </head>
 
@@ -19,60 +19,25 @@
 
     <!-- HEADER -->
 
-    <header>
-
-        <div class="logo">
-            Ekpoma<span>Ride</span>
-        </div>
-
-        <nav>
-
-            <ul>
-
-                <li>
-                    <a href="index.html">
-                        HOME
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about.html">
-                        ABOUT
-                    </a>
-                </li>
-
-                <li>
-                    <a href="rides.html">
-                        RIDES
-                    </a>
-                </li>
-
-                <li>
-                    <a href="booking.html">
-                        BOOK A RIDE
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html">
-                        CONTACT
-                    </a>
-                </li>
-
-                <li><a href="driver.html">DRIVER</a></li>
-                <li><a href="history.html">HISTORY</a></li>
-                <li><a href="payment.html">PAYMENT</a></li>
-                
-            </ul>
-
-        </nav>
-
-        <a href="booking.html" class="header-button">
-            Book Ride
-        </a>
-
-    </header>
-
+   <header>
+    <div class="logo">
+          <h3 class="logo-text">EKPOMA<span>RIDE</h3>
+    </div>
+    <button class="menu-btn">☰</button>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="rides.html">RIDES</a></li>
+            <li><a href="booking.html">BOOK A RIDE</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="driver.html">DRIVER</a></li>
+            <li><a href="history.html">HISTORY</a></li>
+            <li><a href="payment.html">PAYMENT</a></li>
+        </ul>
+        <a href="history.html" class="header-button">History</a>
+    </nav>
+</header>
 
     <!-- PAGE HERO -->
 
@@ -250,7 +215,13 @@
 
     </footer>
 
-
+    <script>
+  const menuBtn = document.querySelector('.menu-btn');
+  const nav = document.querySelector('nav');
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+</script>
 </body>
 
 </html>
